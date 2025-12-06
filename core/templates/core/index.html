@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asif's Storefront!</title>
+    <link rel="stylesheet" href="{% static 'core/styles.css' %}"> 
+</head>
+<body>
+    <div class="home-page">
+        <h1 class="heading">Welcome to Asif's first Django Project!</h1>
+        <h2 class="subheading"> with help from Jasmyn on the sweet buttons and styling    </h2>
+        <div class="onesie"> 
+            <form action="https://timstore-prod.herokuapp.com/store/">
+            <input class="button" type="submit" value="Go to the API Root"/>
+            </form>
+            <form action="https://github.com/tooTALLtim/first_django_app">
+                <input class="button" type="submit" value="projects' github repo"/>
+            </form>
+        </div>
+        <img src="{% static 'core/logo.svg' %}" alt="Logo" class="logo">
+    </div>
+</body>
+</html>

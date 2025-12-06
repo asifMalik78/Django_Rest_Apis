@@ -1,0 +1,12 @@
+__pycache__
+*.py[cod]
+*$py.class
+.venv
+.git
+.gitignore
+.vscode
+*.log
+db.sqlite3
+media
+celerybeat-schedule
+local_settings.py

@@ -1,0 +1,41 @@
+{% block subject %}
+Welcome to SoloBundle, {{ full_name }}!
+{% endblock %}
+
+{% block html_body %}
+<div
+    style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background-color: #f9f9f9;">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <h1 style="color: #333; margin: 0;">Hello, {{ username }}!</h1>
+        <p style="color: #666; font-size: 16px;">We're excited to have you on board.</p>
+    </div>
+
+    <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0;">
+        <p style="color: #333; font-size: 16px; line-height: 1.5;">
+            Hi <strong>{{ full_name }}</strong>,
+        </p>
+        <p style="color: #333; font-size: 16px; line-height: 1.5;">
+            Thank you for joining <strong>SoloBundle</strong>. We are thrilled to share our latest updates and exclusive
+            offers with you.
+        </p>
+        <p style="color: #333; font-size: 16px; line-height: 1.5;">
+            Check out the attached image for a sneak peek at what's coming next!
+        </p>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="cid:custom_image" alt="Sneak Peek" style="max-width: 100%; height: auto; border-radius: 4px;">
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="https://solobundle.com"
+                style="background-color: #007bff; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold;">Visit
+                Our Website</a>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px; color: #999; font-size: 12px;">
+        <p>&copy; 2025 SoloBundle. All rights reserved.</p>
+        <p>1234 Street Name, City, Country</p>
+    </div>
+</div>
+{% endblock %}
