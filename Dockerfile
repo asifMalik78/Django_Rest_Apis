@@ -1,7 +1,16 @@
 FROM python:3.13-slim
 
+# Copy uv from the official image
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+# uv settings
+ENV UV_COMPILE_BYTECODE=1
+ENV UV_LINK_MODE=copy
+# Use a venv path that won't be masked by the bind mount
+ENV UV_PROJECT_ENVIRONMENT=/opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
 WORKDIR /app
 
@@ -12,8 +21,9 @@ RUN apt-get update && apt-get install -y \
     default-libmysqlclient-dev \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt /app/
-RUN pip install --no-cache-dir -r requirements.txt
+# Install dependencies
+COPY pyproject.toml uv.lock /app/
+RUN uv sync --frozen --no-install-project
 
 COPY . /app/
 
